@@ -48,10 +48,21 @@ std::wstring modAlphaCipher::convert(const std::vector<int>& v)
 
 std::wstring modAlphaCipher::toUpper(const std::wstring& s)
 {
-    std::wstring result = s;
+    std::wstring result;
     std::locale loc("ru_RU.UTF-8");
-    for (wchar_t& c : result) {
-        c = std::toupper(c, loc);
+    
+    for (wchar_t c : s) {
+        wchar_t upper_c = std::toupper(c, loc);
+        bool found = false;
+        for (wchar_t alpha_char : numAlpha) {
+            if (upper_c == alpha_char) {
+                found = true;
+                break;
+            }
+        }
+        if (found) {
+            result.push_back(upper_c);
+        }
     }
     return result;
 }
