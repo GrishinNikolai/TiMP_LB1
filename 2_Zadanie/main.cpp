@@ -7,15 +7,20 @@
 
 using namespace std;
 
-// Функция для проверки корректности ввода числа
-int getValidKey() {
+// Функция для конвертации string в wstring
+std::wstring string_to_wstring(const std::string& str) {
+    std::wstring_convert<std::codecvt_utf8<wchar_t>> converter;
+    return converter.from_bytes(str);
+}
+
+int getKey() {
     int key;
     while (true) {
         wcout << L"Введите ключ (количество столбцов): ";
         wcin >> key;
 
-        if (wcin.fail() || key <= 0) {
-            wcout << L"Ошибка: ключ должен быть положительным целым числом!" << endl;
+        if (wcin.fail()) {
+            wcout << L"Ошибка: ключ должен быть числом!" << endl;
             wcin.clear();
             wcin.ignore(numeric_limits<streamsize>::max(), L'\n');
         } else {
@@ -25,46 +30,23 @@ int getValidKey() {
     return key;
 }
 
-// Функция для получения текста от пользователя
 wstring getText(const wstring& prompt) {
     wstring text;
     wcout << prompt;
-    wcin.ignore(); // Игнорируем предыдущий символ новой строки
+    wcin.ignore();
     getline(wcin, text);
     return text;
 }
 
-// Функция проверки, что строка содержит только русские буквы и пробелы
-bool isValidRussianText(const wstring& text) {
-    for (wchar_t c : text) {
-        if (c != L' ' && !(c >= L'А' && c <= L'Я') && !(c >= L'а' && c <= L'я') && c != L'Ё' && c != L'ё') {
-            return false;
-        }
-    }
-    return true;
-}
-
-// Функция для удаления пробелов из текста
-wstring removeSpaces(const wstring& text) {
-    wstring result;
-    for (wchar_t c : text) {
-        if (c != L' ') {
-            result += c;
-        }
-    }
-    return result;
-}
-
 int main() {
-    // Устанавливаем локаль для русского языка
+    // Устанавливаем локаль для корректного отображения русских символов
     setlocale(LC_ALL, "ru_RU.UTF-8");
     locale loc("ru_RU.UTF-8");
     wcout.imbue(loc);
     wcin.imbue(loc);
 
     try {
-        // Ввод и проверка ключа
-        int key = getValidKey();
+        int key = getKey();
         tableCipher cipher(key);
 
         wcout << L"Шифр табличной маршрутной перестановки готов к работе!" << endl;
@@ -86,40 +68,30 @@ int main() {
 
                 case 1: {
                     wstring text = getText(L"Введите текст для шифрования: ");
-                    if (!text.empty()) {
-                        if (isValidRussianText(text)) {
-                            // Удаляем пробелы перед шифрованием
-                            wstring textWithoutSpaces = removeSpaces(text);
-                            if (text != textWithoutSpaces) {
-                                wcout << L"Текст без пробелов: " << textWithoutSpaces << endl;
-                            }
-                            wstring encrypted = cipher.encrypt(textWithoutSpaces);
-                            wcout << L"Зашифрованный текст: " << encrypted << endl;
-                        } else {
-                            wcout << L"Ошибка: текст должен содержать только русские буквы и пробелы!" << endl;
-                        }
-                    } else {
-                        wcout << L"Ошибка: введен пустой текст!" << endl;
+                    try {
+                        wstring encrypted = cipher.encrypt(text);
+                        wcout << L"Зашифрованный текст: " << encrypted << endl;
+                    } catch (const tableCipher_error& e) {
+                        wstring error_msg = string_to_wstring(e.what());
+                        wcerr << L"Ошибка шифрования: " << error_msg << endl;
+                    } catch (const exception& e) {
+                        wstring error_msg = string_to_wstring(e.what());
+                        wcerr << L"Неизвестная ошибка: " << error_msg << endl;
                     }
                     break;
                 }
 
                 case 2: {
                     wstring text = getText(L"Введите текст для расшифрования: ");
-                    if (!text.empty()) {
-                        if (isValidRussianText(text)) {
-                            // Удаляем пробелы перед расшифрованием
-                            wstring textWithoutSpaces = removeSpaces(text);
-                            if (text != textWithoutSpaces) {
-                                wcout << L"Текст без пробелов: " << textWithoutSpaces << endl;
-                            }
-                            wstring decrypted = cipher.decrypt(textWithoutSpaces);
-                            wcout << L"Расшифрованный текст: " << decrypted << endl;
-                        } else {
-                            wcout << L"Ошибка: текст должен содержать только русские буквы и пробелы!" << endl;
-                        }
-                    } else {
-                        wcout << L"Ошибка: введен пустой текст!" << endl;
+                    try {
+                        wstring decrypted = cipher.decrypt(text);
+                        wcout << L"Расшифрованный текст: " << decrypted << endl;
+                    } catch (const tableCipher_error& e) {
+                        wstring error_msg = string_to_wstring(e.what());
+                        wcerr << L"Ошибка расшифрования: " << error_msg << endl;
+                    } catch (const exception& e) {
+                        wstring error_msg = string_to_wstring(e.what());
+                        wcerr << L"Неизвестная ошибка: " << error_msg << endl;
                     }
                     break;
                 }
@@ -132,8 +104,13 @@ int main() {
 
         } while (operation != 0);
 
+    } catch (const tableCipher_error& e) {
+        wstring error_msg = string_to_wstring(e.what());
+        wcerr << L"Ошибка создания шифратора: " << error_msg << endl;
+        return 1;
     } catch (const exception& e) {
-        wcerr << L"Ошибка: " << e.what() << endl;
+        wstring error_msg = string_to_wstring(e.what());
+        wcerr << L"Критическая ошибка: " << error_msg << endl;
         return 1;
     }
 
