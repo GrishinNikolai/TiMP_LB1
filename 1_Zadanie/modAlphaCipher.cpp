@@ -93,14 +93,6 @@ std::wstring modAlphaCipher::getValidOpenText(const std::wstring& s)
     if (tmp.empty()) {
         throw cipher_error("Empty open text");
     }
-
-    // Проверяем, что открытый текст содержит только русские буквы
-    for (wchar_t c : tmp) {
-        if (!((c >= L'А' && c <= L'Я') || c == L'Ё')) {
-            throw cipher_error("Invalid open text - contains non-Russian characters");
-        }
-    }
-
     return tmp;
 }
 
