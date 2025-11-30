@@ -72,7 +72,12 @@ std::wstring modAlphaCipher::getValidKey(const std::wstring& s)
     if (s.empty()) {
         throw cipher_error("Empty key");
     }
-    std::wstring tmp = toUpper(s);
+    std::wstring tmp;
+    std::locale loc("ru_RU.UTF-8");
+    for (wchar_t c : s) {
+        wchar_t upper_c = std::toupper(c, loc);
+        tmp.push_back(upper_c); // Добавляем ВСЕ символы в верхнем регистре
+    }
     if (tmp.empty()) {
         throw cipher_error("Invalid key - no valid characters");
     }
@@ -84,6 +89,19 @@ std::wstring modAlphaCipher::getValidKey(const std::wstring& s)
         }
     }
 
+    // Проверка на слабый ключ: считаем символы, которые дают нулевой сдвиг
+    int n = 0;
+    for (auto e : tmp) {
+        // Буквы 'А' и 'Ё' дают нулевой сдвиг (индекс 0)
+        if (e == L'А' || e == L'Ё') {
+            n++;
+        }
+    }
+
+    if (2 * n > tmp.size()) {
+        throw cipher_error("Weak key - too many zero-shift characters");
+    }
+
     return tmp;
 }
 
@@ -93,6 +111,20 @@ std::wstring modAlphaCipher::getValidOpenText(const std::wstring& s)
     if (tmp.empty()) {
         throw cipher_error("Empty open text");
     }
+
+    // Дополнительная проверка - если после фильтрации остались только не-буквы
+    bool hasValidChars = false;
+    for (wchar_t c : tmp) {
+        if ((c >= L'А' && c <= L'Я') || c == L'Ё') {
+            hasValidChars = true;
+            break;
+        }
+    }
+
+    if (!hasValidChars) {
+        throw cipher_error("Invalid open text - no Russian letters");
+    }
+
     return tmp;
 }
 
