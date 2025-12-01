@@ -43,20 +43,22 @@ std::wstring tableCipher::encrypt(const std::wstring& open_text)
     int text_len = text.length();
     int rows = (text_len + key - 1) / key;
 
-    std::vector<std::vector<wchar_t>> table(rows, std::vector<wchar_t>(key));
+    std::vector<std::vector<wchar_t>> table(rows, std::vector<wchar_t>(key, L' '));
 
     int index = 0;
     for (int i = 0; i < rows; i++) {
         for (int j = 0; j < key; j++) {
-            if (index < text.length()) {
+            if (index < text_len) {
                 table[i][j] = text[index++];
             }
         }
     }
 
+    // Считываем таблицу сверху вниз, справа налево
     std::wstring result;
     for (int j = key - 1; j >= 0; j--) {
         for (int i = 0; i < rows; i++) {
+            if (table[i][j] != L' ')
             result += table[i][j];
         }
     }
