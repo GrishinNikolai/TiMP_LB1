@@ -1,0 +1,103 @@
+\hypertarget{classtableCipher__error}{}\doxysection{Класс table\+Cipher\+\_\+error}
+\label{classtableCipher__error}\index{tableCipher\_error@{tableCipher\_error}}
+
+
+Класс-\/исключение для ошибок шифра табличной перестановки  
+
+
+
+
+{\ttfamily \#include $<$table\+Cipher.\+h$>$}
+
+
+
+Граф наследования\+:table\+Cipher\+\_\+error\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=184pt]{classtableCipher__error__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Граф связей класса table\+Cipher\+\_\+error\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=184pt]{classtableCipher__error__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtableCipher__error_afaa227e36d96a1aac1a5bd746ccf6bd7}{table\+Cipher\+\_\+error}} (const std\+::string \&what\+\_\+arg)
+\begin{DoxyCompactList}\small\item\em Конструктор с параметром типа std\+::string. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtableCipher__error_ad04f8c5945043d0d868ec6f46eda3615}{table\+Cipher\+\_\+error}} (const char $\ast$what\+\_\+arg)
+\begin{DoxyCompactList}\small\item\em Конструктор с параметром типа const char$\ast$. \end{DoxyCompactList}\item 
+const char $\ast$ \mbox{\hyperlink{classtableCipher__error_a385ca104287aa297e2176fbf8b70334f}{what}} () const noexcept override
+\begin{DoxyCompactList}\small\item\em Получение сообщения об ошибке \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Закрытые данные}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classtableCipher__error_a6dc2e82554e0231fe0c7b676a06cc6b8}\label{classtableCipher__error_a6dc2e82554e0231fe0c7b676a06cc6b8}} 
+std\+::string {\bfseries message}
+\begin{DoxyCompactList}\small\item\em Сообщение об ошибке \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Класс-\/исключение для ошибок шифра табличной перестановки 
+
+\doxysubsection{Конструктор(ы)}
+\mbox{\Hypertarget{classtableCipher__error_afaa227e36d96a1aac1a5bd746ccf6bd7}\label{classtableCipher__error_afaa227e36d96a1aac1a5bd746ccf6bd7}} 
+\index{tableCipher\_error@{tableCipher\_error}!tableCipher\_error@{tableCipher\_error}}
+\index{tableCipher\_error@{tableCipher\_error}!tableCipher\_error@{tableCipher\_error}}
+\doxysubsubsection{\texorpdfstring{tableCipher\_error()}{tableCipher\_error()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily table\+Cipher\+\_\+error\+::table\+Cipher\+\_\+error (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{what\+\_\+arg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+Конструктор с параметром типа std\+::string. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em what\+\_\+arg} & Сообщение об ошибке \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classtableCipher__error_ad04f8c5945043d0d868ec6f46eda3615}\label{classtableCipher__error_ad04f8c5945043d0d868ec6f46eda3615}} 
+\index{tableCipher\_error@{tableCipher\_error}!tableCipher\_error@{tableCipher\_error}}
+\index{tableCipher\_error@{tableCipher\_error}!tableCipher\_error@{tableCipher\_error}}
+\doxysubsubsection{\texorpdfstring{tableCipher\_error()}{tableCipher\_error()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily table\+Cipher\+\_\+error\+::table\+Cipher\+\_\+error (\begin{DoxyParamCaption}\item[{const char $\ast$}]{what\+\_\+arg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+Конструктор с параметром типа const char$\ast$. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em what\+\_\+arg} & Сообщение об ошибке \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Методы}
+\mbox{\Hypertarget{classtableCipher__error_a385ca104287aa297e2176fbf8b70334f}\label{classtableCipher__error_a385ca104287aa297e2176fbf8b70334f}} 
+\index{tableCipher\_error@{tableCipher\_error}!what@{what}}
+\index{what@{what}!tableCipher\_error@{tableCipher\_error}}
+\doxysubsubsection{\texorpdfstring{what()}{what()}}
+{\footnotesize\ttfamily const char $\ast$ table\+Cipher\+\_\+error\+::what (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [noexcept]}}
+
+
+
+Получение сообщения об ошибке 
+
+\begin{DoxyReturn}{Возвращает}
+Сообщение об ошибке в виде C-\/строки 
+\end{DoxyReturn}
+
+
+Объявления и описания членов класса находятся в файле\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{tableCipher_8h}{table\+Cipher.\+h}}\end{DoxyCompactItemize}

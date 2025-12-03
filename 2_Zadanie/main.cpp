@@ -1,3 +1,12 @@
+/**
+ * @file main.cpp
+ * @author Гришин Н.С.
+ * @version 1.0
+ * @date 03.12.2025
+ * @copyright ИБСТ ПГУ
+ * @brief Главный модуль для программы шифрования табличной маршрутной перестановкой
+ */
+
 #include <iostream>
 #include <string>
 #include <limits>
@@ -7,12 +16,20 @@
 
 using namespace std;
 
-// Функция для конвертации string в wstring
+/**
+ * @brief Конвертация string в wstring
+ * @param str Входная строка
+ * @return Строка в формате wstring
+ */
 std::wstring string_to_wstring(const std::string& str) {
     std::wstring_convert<std::codecvt_utf8<wchar_t>> converter;
     return converter.from_bytes(str);
 }
 
+/**
+ * @brief Получение ключа от пользователя
+ * @return Валидный ключ (количество столбцов)
+ */
 int getKey() {
     int key;
     while (true) {
@@ -30,6 +47,11 @@ int getKey() {
     return key;
 }
 
+/**
+ * @brief Получение текста от пользователя
+ * @param prompt Приглашение для ввода
+ * @return Введенный текст
+ */
 wstring getText(const wstring& prompt) {
     wstring text;
     wcout << prompt;
@@ -38,6 +60,10 @@ wstring getText(const wstring& prompt) {
     return text;
 }
 
+/**
+ * @brief Главная функция программы
+ * @return 0 при успешном выполнении, 1 при ошибке
+ */
 int main() {
     // Устанавливаем локаль для корректного отображения русских символов
     setlocale(LC_ALL, "ru_RU.UTF-8");

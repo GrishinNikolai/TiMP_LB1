@@ -1,0 +1,17 @@
+PROJECT_NAME           = "Лабораторная работа №4: Документирование модулей шифра табличной перестановки"
+
+PROJECT_NUMBER         = 1.0
+
+OUTPUT_LANGUAGE        = Russian
+
+EXTRACT_PRIVATE        = YES
+
+GENERATE_HTML          = YES
+HTML_OUTPUT            = html
+
+GENERATE_LATEX         = YES
+LATEX_OUTPUT           = latex
+
+INPUT                  = tableCipher.h tableCipher.cpp main.cpp
+
+RECURSIVE              = YES

@@ -1,0 +1,48 @@
+\hypertarget{tableCipher_8h_source}{}\doxysection{table\+Cipher.\+h}
+\mbox{\hyperlink{tableCipher_8h}{См. документацию.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include <stdexcept>}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <locale>}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include <codecvt>}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{20 \textcolor{keyword}{class }\mbox{\hyperlink{classtableCipher__error}{tableCipher\_error}} : \textcolor{keyword}{public} std::runtime\_error \{}
+\DoxyCodeLine{21 \textcolor{keyword}{private}:}
+\DoxyCodeLine{22     std::string \mbox{\hyperlink{classtableCipher__error_a6dc2e82554e0231fe0c7b676a06cc6b8}{message}}; }
+\DoxyCodeLine{23 \textcolor{keyword}{public}:}
+\DoxyCodeLine{28     \textcolor{keyword}{explicit} \mbox{\hyperlink{classtableCipher__error_afaa227e36d96a1aac1a5bd746ccf6bd7}{tableCipher\_error}}(\textcolor{keyword}{const} std::string\& what\_arg) : std::runtime\_error(what\_arg), \mbox{\hyperlink{classtableCipher__error_a6dc2e82554e0231fe0c7b676a06cc6b8}{message}}(what\_arg) \{\}}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{34     \textcolor{keyword}{explicit} \mbox{\hyperlink{classtableCipher__error_ad04f8c5945043d0d868ec6f46eda3615}{tableCipher\_error}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* what\_arg) : std::runtime\_error(what\_arg), \mbox{\hyperlink{classtableCipher__error_a6dc2e82554e0231fe0c7b676a06cc6b8}{message}}(what\_arg) \{\}}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{40     \textcolor{keyword}{const} \textcolor{keywordtype}{char}* \mbox{\hyperlink{classtableCipher__error_a385ca104287aa297e2176fbf8b70334f}{what}}() const noexcept\textcolor{keyword}{ override }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classtableCipher__error_a6dc2e82554e0231fe0c7b676a06cc6b8}{message}}.c\_str(); \}}
+\DoxyCodeLine{41 \};}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{50 \textcolor{keyword}{class }\mbox{\hyperlink{classtableCipher}{tableCipher}}}
+\DoxyCodeLine{51 \{}
+\DoxyCodeLine{52 \textcolor{keyword}{private}:}
+\DoxyCodeLine{53     \textcolor{keywordtype}{int} \mbox{\hyperlink{classtableCipher_ab1bd97a2a26964f3344659e8e87d9b41}{key}}; }
+\DoxyCodeLine{54 }
+\DoxyCodeLine{60     std::wstring \mbox{\hyperlink{classtableCipher_a380065e4a20a9e058dcfc211578445aa}{toUpper}}(\textcolor{keyword}{const} std::wstring\& s);}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{67     \textcolor{keywordtype}{bool} \mbox{\hyperlink{classtableCipher_afbba9bd8379e487cff5c4ff8857a2152}{isValidRussianText}}(\textcolor{keyword}{const} std::wstring\& text);}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{75     std::wstring \mbox{\hyperlink{classtableCipher_aeaf4e00ecfa05b262ab27de5219b1fad}{prepareText}}(\textcolor{keyword}{const} std::wstring\& s);}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{82     \textcolor{keywordtype}{void} \mbox{\hyperlink{classtableCipher_a94d4dc8e8f098f7b91b4ba6d0eb549b5}{validateKey}}(\textcolor{keywordtype}{int} k);}
+\DoxyCodeLine{83 }
+\DoxyCodeLine{90     \textcolor{keywordtype}{void} \mbox{\hyperlink{classtableCipher_a94f6cbdae434eb4210c5e065cb97771b}{validateTextLength}}(\textcolor{keyword}{const} std::wstring\& text, \textcolor{keyword}{const} std::string\& operation);}
+\DoxyCodeLine{91 }
+\DoxyCodeLine{92 \textcolor{keyword}{public}:}
+\DoxyCodeLine{96     \mbox{\hyperlink{classtableCipher_a16dd23077ac4b8967d7956661921fc80}{tableCipher}}() = \textcolor{keyword}{delete};}
+\DoxyCodeLine{97 }
+\DoxyCodeLine{103     \mbox{\hyperlink{classtableCipher_a16dd23077ac4b8967d7956661921fc80}{tableCipher}}(\textcolor{keywordtype}{int} k);}
+\DoxyCodeLine{104 }
+\DoxyCodeLine{111     std::wstring \mbox{\hyperlink{classtableCipher_a5907eb876d5eecee30f6e9d637c632ae}{encrypt}}(\textcolor{keyword}{const} std::wstring\& open\_text);}
+\DoxyCodeLine{112 }
+\DoxyCodeLine{119     std::wstring \mbox{\hyperlink{classtableCipher_a6682593120c284ed1cbc6495a3b9c506}{decrypt}}(\textcolor{keyword}{const} std::wstring\& cipher\_text);}
+\DoxyCodeLine{120 \};}
+
+\end{DoxyCode}

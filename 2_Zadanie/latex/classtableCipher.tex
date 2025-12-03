@@ -1,0 +1,228 @@
+\hypertarget{classtableCipher}{}\doxysection{Класс table\+Cipher}
+\label{classtableCipher}\index{tableCipher@{tableCipher}}
+
+
+Класс для шифрования методом табличной маршрутной перестановки  
+
+
+
+
+{\ttfamily \#include $<$table\+Cipher.\+h$>$}
+
+\doxysubsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classtableCipher_a16dd23077ac4b8967d7956661921fc80}\label{classtableCipher_a16dd23077ac4b8967d7956661921fc80}} 
+{\bfseries table\+Cipher} ()=delete
+\begin{DoxyCompactList}\small\item\em Запрет конструктора без параметров \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtableCipher_afe0559f4ae6f9c37420a674a3ae394a3}{table\+Cipher}} (int k)
+\begin{DoxyCompactList}\small\item\em Конструктор с установкой ключа \end{DoxyCompactList}\item 
+std\+::wstring \mbox{\hyperlink{classtableCipher_a5907eb876d5eecee30f6e9d637c632ae}{encrypt}} (const std\+::wstring \&open\+\_\+text)
+\begin{DoxyCompactList}\small\item\em Метод зашифровывания \end{DoxyCompactList}\item 
+std\+::wstring \mbox{\hyperlink{classtableCipher_a6682593120c284ed1cbc6495a3b9c506}{decrypt}} (const std\+::wstring \&cipher\+\_\+text)
+\begin{DoxyCompactList}\small\item\em Метод расшифровывания \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Закрытые члены}
+\begin{DoxyCompactItemize}
+\item 
+std\+::wstring \mbox{\hyperlink{classtableCipher_a380065e4a20a9e058dcfc211578445aa}{to\+Upper}} (const std\+::wstring \&s)
+\begin{DoxyCompactList}\small\item\em Приведение строки к верхнему регистру \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classtableCipher_afbba9bd8379e487cff5c4ff8857a2152}{is\+Valid\+Russian\+Text}} (const std\+::wstring \&text)
+\begin{DoxyCompactList}\small\item\em Проверка текста на соответствие русскому алфавиту \end{DoxyCompactList}\item 
+std\+::wstring \mbox{\hyperlink{classtableCipher_aeaf4e00ecfa05b262ab27de5219b1fad}{prepare\+Text}} (const std\+::wstring \&s)
+\begin{DoxyCompactList}\small\item\em Подготовка текста к шифрованию \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtableCipher_a94d4dc8e8f098f7b91b4ba6d0eb549b5}{validate\+Key}} (int k)
+\begin{DoxyCompactList}\small\item\em Валидация ключа \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtableCipher_a94f6cbdae434eb4210c5e065cb97771b}{validate\+Text\+Length}} (const std\+::wstring \&text, const std\+::string \&operation)
+\begin{DoxyCompactList}\small\item\em Валидация длины текста относительно ключа \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Закрытые данные}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classtableCipher_ab1bd97a2a26964f3344659e8e87d9b41}\label{classtableCipher_ab1bd97a2a26964f3344659e8e87d9b41}} 
+int {\bfseries key}
+\begin{DoxyCompactList}\small\item\em Ключ шифрования (количество столбцов) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Класс для шифрования методом табличной маршрутной перестановки 
+
+Реализует табличную маршрутную перестановку для русского алфавита. Маршрут записи\+: по горизонтали слева направо, сверху вниз. Маршрут считывания\+: сверху вниз, справа налево. Ключ -\/ количество столбцов таблицы. 
+
+\doxysubsection{Конструктор(ы)}
+\mbox{\Hypertarget{classtableCipher_afe0559f4ae6f9c37420a674a3ae394a3}\label{classtableCipher_afe0559f4ae6f9c37420a674a3ae394a3}} 
+\index{tableCipher@{tableCipher}!tableCipher@{tableCipher}}
+\index{tableCipher@{tableCipher}!tableCipher@{tableCipher}}
+\doxysubsubsection{\texorpdfstring{tableCipher()}{tableCipher()}}
+{\footnotesize\ttfamily table\+Cipher\+::table\+Cipher (\begin{DoxyParamCaption}\item[{int}]{k }\end{DoxyParamCaption})}
+
+
+
+Конструктор с установкой ключа 
+
+Конструктор класса \mbox{\hyperlink{classtableCipher}{table\+Cipher}}.
+
+
+\begin{DoxyParams}{Аргументы}
+{\em k} & Ключ шифрования (количество столбцов) \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Исключения}
+{\em \mbox{\hyperlink{classtableCipher__error}{table\+Cipher\+\_\+error}}} & Если ключ невалиден \\
+\hline
+\end{DoxyExceptions}
+
+
+\doxysubsection{Методы}
+\mbox{\Hypertarget{classtableCipher_a6682593120c284ed1cbc6495a3b9c506}\label{classtableCipher_a6682593120c284ed1cbc6495a3b9c506}} 
+\index{tableCipher@{tableCipher}!decrypt@{decrypt}}
+\index{decrypt@{decrypt}!tableCipher@{tableCipher}}
+\doxysubsubsection{\texorpdfstring{decrypt()}{decrypt()}}
+{\footnotesize\ttfamily std\+::wstring table\+Cipher\+::decrypt (\begin{DoxyParamCaption}\item[{const std\+::wstring \&}]{cipher\+\_\+text }\end{DoxyParamCaption})}
+
+
+
+Метод расшифровывания 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em cipher\+\_\+text} & Зашифрованный текст для расшифрования \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Расшифрованная строка 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Исключения}
+{\em \mbox{\hyperlink{classtableCipher__error}{table\+Cipher\+\_\+error}}} & Если текст пустой или недостаточной длины \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classtableCipher_a5907eb876d5eecee30f6e9d637c632ae}\label{classtableCipher_a5907eb876d5eecee30f6e9d637c632ae}} 
+\index{tableCipher@{tableCipher}!encrypt@{encrypt}}
+\index{encrypt@{encrypt}!tableCipher@{tableCipher}}
+\doxysubsubsection{\texorpdfstring{encrypt()}{encrypt()}}
+{\footnotesize\ttfamily std\+::wstring table\+Cipher\+::encrypt (\begin{DoxyParamCaption}\item[{const std\+::wstring \&}]{open\+\_\+text }\end{DoxyParamCaption})}
+
+
+
+Метод зашифровывания 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em open\+\_\+text} & Открытый текст для шифрования \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Зашифрованная строка 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Исключения}
+{\em \mbox{\hyperlink{classtableCipher__error}{table\+Cipher\+\_\+error}}} & Если текст пустой или недостаточной длины \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classtableCipher_afbba9bd8379e487cff5c4ff8857a2152}\label{classtableCipher_afbba9bd8379e487cff5c4ff8857a2152}} 
+\index{tableCipher@{tableCipher}!isValidRussianText@{isValidRussianText}}
+\index{isValidRussianText@{isValidRussianText}!tableCipher@{tableCipher}}
+\doxysubsubsection{\texorpdfstring{isValidRussianText()}{isValidRussianText()}}
+{\footnotesize\ttfamily bool table\+Cipher\+::is\+Valid\+Russian\+Text (\begin{DoxyParamCaption}\item[{const std\+::wstring \&}]{text }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Проверка текста на соответствие русскому алфавиту 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em text} & Проверяемый текст \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+true если текст содержит только русские буквы и пробелы, иначе false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtableCipher_aeaf4e00ecfa05b262ab27de5219b1fad}\label{classtableCipher_aeaf4e00ecfa05b262ab27de5219b1fad}} 
+\index{tableCipher@{tableCipher}!prepareText@{prepareText}}
+\index{prepareText@{prepareText}!tableCipher@{tableCipher}}
+\doxysubsubsection{\texorpdfstring{prepareText()}{prepareText()}}
+{\footnotesize\ttfamily std\+::wstring table\+Cipher\+::prepare\+Text (\begin{DoxyParamCaption}\item[{const std\+::wstring \&}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Подготовка текста к шифрованию 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em s} & Исходный текст \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Текст в верхнем регистре без пробелов 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Исключения}
+{\em \mbox{\hyperlink{classtableCipher__error}{table\+Cipher\+\_\+error}}} & Если текст пустой, содержит недопустимые символы или только пробелы \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classtableCipher_a380065e4a20a9e058dcfc211578445aa}\label{classtableCipher_a380065e4a20a9e058dcfc211578445aa}} 
+\index{tableCipher@{tableCipher}!toUpper@{toUpper}}
+\index{toUpper@{toUpper}!tableCipher@{tableCipher}}
+\doxysubsubsection{\texorpdfstring{toUpper()}{toUpper()}}
+{\footnotesize\ttfamily std\+::wstring table\+Cipher\+::to\+Upper (\begin{DoxyParamCaption}\item[{const std\+::wstring \&}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Приведение строки к верхнему регистру 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em s} & Входная строка \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Строка в верхнем регистре 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtableCipher_a94d4dc8e8f098f7b91b4ba6d0eb549b5}\label{classtableCipher_a94d4dc8e8f098f7b91b4ba6d0eb549b5}} 
+\index{tableCipher@{tableCipher}!validateKey@{validateKey}}
+\index{validateKey@{validateKey}!tableCipher@{tableCipher}}
+\doxysubsubsection{\texorpdfstring{validateKey()}{validateKey()}}
+{\footnotesize\ttfamily void table\+Cipher\+::validate\+Key (\begin{DoxyParamCaption}\item[{int}]{k }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Валидация ключа 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em k} & Проверяемый ключ \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Исключения}
+{\em \mbox{\hyperlink{classtableCipher__error}{table\+Cipher\+\_\+error}}} & Если ключ невалиден \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classtableCipher_a94f6cbdae434eb4210c5e065cb97771b}\label{classtableCipher_a94f6cbdae434eb4210c5e065cb97771b}} 
+\index{tableCipher@{tableCipher}!validateTextLength@{validateTextLength}}
+\index{validateTextLength@{validateTextLength}!tableCipher@{tableCipher}}
+\doxysubsubsection{\texorpdfstring{validateTextLength()}{validateTextLength()}}
+{\footnotesize\ttfamily void table\+Cipher\+::validate\+Text\+Length (\begin{DoxyParamCaption}\item[{const std\+::wstring \&}]{text,  }\item[{const std\+::string \&}]{operation }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Валидация длины текста относительно ключа 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em text} & Проверяемый текст \\
+\hline
+{\em operation} & Название операции (для сообщения об ошибке) \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Исключения}
+{\em \mbox{\hyperlink{classtableCipher__error}{table\+Cipher\+\_\+error}}} & Если длина текста недостаточна для операции \\
+\hline
+\end{DoxyExceptions}
+
+
+Объявления и описания членов классов находятся в файлах\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{tableCipher_8h}{table\+Cipher.\+h}}\item 
+\mbox{\hyperlink{tableCipher_8cpp}{table\+Cipher.\+cpp}}\end{DoxyCompactItemize}

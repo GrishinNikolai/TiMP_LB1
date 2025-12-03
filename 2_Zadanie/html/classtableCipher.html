@@ -1,0 +1,436 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Лабораторная работа №4: Документирование модулей шифра табличной перестановки: Класс tableCipher</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Лабораторная работа №4: Документирование модулей шифра табличной перестановки<span id="projectnumber">&#160;1.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.9.4 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Поиск','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Открытые члены</a> &#124;
+<a href="#pri-methods">Закрытые члены</a> &#124;
+<a href="#pri-attribs">Закрытые данные</a> &#124;
+<a href="classtableCipher-members.html">Полный список членов класса</a>  </div>
+  <div class="headertitle"><div class="title">Класс tableCipher</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Класс для шифрования методом табличной маршрутной перестановки  
+ <a href="classtableCipher.html#details">Подробнее...</a></p>
+
+<p><code>#include &lt;<a class="el" href="tableCipher_8h_source.html">tableCipher.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:a16dd23077ac4b8967d7956661921fc80"><td class="memItemLeft" align="right" valign="top"><a id="a16dd23077ac4b8967d7956661921fc80" name="a16dd23077ac4b8967d7956661921fc80"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>tableCipher</b> ()=delete</td></tr>
+<tr class="memdesc:a16dd23077ac4b8967d7956661921fc80"><td class="mdescLeft">&#160;</td><td class="mdescRight">Запрет конструктора без параметров <br /></td></tr>
+<tr class="separator:a16dd23077ac4b8967d7956661921fc80"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe0559f4ae6f9c37420a674a3ae394a3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtableCipher.html#afe0559f4ae6f9c37420a674a3ae394a3">tableCipher</a> (int k)</td></tr>
+<tr class="memdesc:afe0559f4ae6f9c37420a674a3ae394a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Конструктор с установкой ключа  <a href="classtableCipher.html#afe0559f4ae6f9c37420a674a3ae394a3">Подробнее...</a><br /></td></tr>
+<tr class="separator:afe0559f4ae6f9c37420a674a3ae394a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5907eb876d5eecee30f6e9d637c632ae"><td class="memItemLeft" align="right" valign="top">std::wstring&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtableCipher.html#a5907eb876d5eecee30f6e9d637c632ae">encrypt</a> (const std::wstring &amp;open_text)</td></tr>
+<tr class="memdesc:a5907eb876d5eecee30f6e9d637c632ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Метод зашифровывания  <a href="classtableCipher.html#a5907eb876d5eecee30f6e9d637c632ae">Подробнее...</a><br /></td></tr>
+<tr class="separator:a5907eb876d5eecee30f6e9d637c632ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6682593120c284ed1cbc6495a3b9c506"><td class="memItemLeft" align="right" valign="top">std::wstring&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtableCipher.html#a6682593120c284ed1cbc6495a3b9c506">decrypt</a> (const std::wstring &amp;cipher_text)</td></tr>
+<tr class="memdesc:a6682593120c284ed1cbc6495a3b9c506"><td class="mdescLeft">&#160;</td><td class="mdescRight">Метод расшифровывания  <a href="classtableCipher.html#a6682593120c284ed1cbc6495a3b9c506">Подробнее...</a><br /></td></tr>
+<tr class="separator:a6682593120c284ed1cbc6495a3b9c506"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Закрытые члены</h2></td></tr>
+<tr class="memitem:a380065e4a20a9e058dcfc211578445aa"><td class="memItemLeft" align="right" valign="top">std::wstring&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtableCipher.html#a380065e4a20a9e058dcfc211578445aa">toUpper</a> (const std::wstring &amp;s)</td></tr>
+<tr class="memdesc:a380065e4a20a9e058dcfc211578445aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Приведение строки к верхнему регистру  <a href="classtableCipher.html#a380065e4a20a9e058dcfc211578445aa">Подробнее...</a><br /></td></tr>
+<tr class="separator:a380065e4a20a9e058dcfc211578445aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afbba9bd8379e487cff5c4ff8857a2152"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtableCipher.html#afbba9bd8379e487cff5c4ff8857a2152">isValidRussianText</a> (const std::wstring &amp;text)</td></tr>
+<tr class="memdesc:afbba9bd8379e487cff5c4ff8857a2152"><td class="mdescLeft">&#160;</td><td class="mdescRight">Проверка текста на соответствие русскому алфавиту  <a href="classtableCipher.html#afbba9bd8379e487cff5c4ff8857a2152">Подробнее...</a><br /></td></tr>
+<tr class="separator:afbba9bd8379e487cff5c4ff8857a2152"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeaf4e00ecfa05b262ab27de5219b1fad"><td class="memItemLeft" align="right" valign="top">std::wstring&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtableCipher.html#aeaf4e00ecfa05b262ab27de5219b1fad">prepareText</a> (const std::wstring &amp;s)</td></tr>
+<tr class="memdesc:aeaf4e00ecfa05b262ab27de5219b1fad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Подготовка текста к шифрованию  <a href="classtableCipher.html#aeaf4e00ecfa05b262ab27de5219b1fad">Подробнее...</a><br /></td></tr>
+<tr class="separator:aeaf4e00ecfa05b262ab27de5219b1fad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a94d4dc8e8f098f7b91b4ba6d0eb549b5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtableCipher.html#a94d4dc8e8f098f7b91b4ba6d0eb549b5">validateKey</a> (int k)</td></tr>
+<tr class="memdesc:a94d4dc8e8f098f7b91b4ba6d0eb549b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Валидация ключа  <a href="classtableCipher.html#a94d4dc8e8f098f7b91b4ba6d0eb549b5">Подробнее...</a><br /></td></tr>
+<tr class="separator:a94d4dc8e8f098f7b91b4ba6d0eb549b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a94f6cbdae434eb4210c5e065cb97771b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtableCipher.html#a94f6cbdae434eb4210c5e065cb97771b">validateTextLength</a> (const std::wstring &amp;text, const std::string &amp;operation)</td></tr>
+<tr class="memdesc:a94f6cbdae434eb4210c5e065cb97771b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Валидация длины текста относительно ключа  <a href="classtableCipher.html#a94f6cbdae434eb4210c5e065cb97771b">Подробнее...</a><br /></td></tr>
+<tr class="separator:a94f6cbdae434eb4210c5e065cb97771b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Закрытые данные</h2></td></tr>
+<tr class="memitem:ab1bd97a2a26964f3344659e8e87d9b41"><td class="memItemLeft" align="right" valign="top"><a id="ab1bd97a2a26964f3344659e8e87d9b41" name="ab1bd97a2a26964f3344659e8e87d9b41"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>key</b></td></tr>
+<tr class="memdesc:ab1bd97a2a26964f3344659e8e87d9b41"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ключ шифрования (количество столбцов) <br /></td></tr>
+<tr class="separator:ab1bd97a2a26964f3344659e8e87d9b41"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock"><p >Класс для шифрования методом табличной маршрутной перестановки </p>
+<p >Реализует табличную маршрутную перестановку для русского алфавита. Маршрут записи: по горизонтали слева направо, сверху вниз. Маршрут считывания: сверху вниз, справа налево. Ключ - количество столбцов таблицы. </p>
+</div><h2 class="groupheader">Конструктор(ы)</h2>
+<a id="afe0559f4ae6f9c37420a674a3ae394a3" name="afe0559f4ae6f9c37420a674a3ae394a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe0559f4ae6f9c37420a674a3ae394a3">&#9670;&nbsp;</a></span>tableCipher()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">tableCipher::tableCipher </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>k</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Конструктор с установкой ключа </p>
+<p >Конструктор класса <a class="el" href="classtableCipher.html" title="Класс для шифрования методом табличной маршрутной перестановки">tableCipher</a>.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">k</td><td>Ключ шифрования (количество столбцов) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Исключения</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classtableCipher__error.html" title="Класс-исключение для ошибок шифра табличной перестановки">tableCipher_error</a></td><td>Если ключ невалиден </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Методы</h2>
+<a id="a6682593120c284ed1cbc6495a3b9c506" name="a6682593120c284ed1cbc6495a3b9c506"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6682593120c284ed1cbc6495a3b9c506">&#9670;&nbsp;</a></span>decrypt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::wstring tableCipher::decrypt </td>
+          <td>(</td>
+          <td class="paramtype">const std::wstring &amp;&#160;</td>
+          <td class="paramname"><em>cipher_text</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Метод расшифровывания </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cipher_text</td><td>Зашифрованный текст для расшифрования </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Расшифрованная строка </dd></dl>
+<dl class="exception"><dt>Исключения</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classtableCipher__error.html" title="Класс-исключение для ошибок шифра табличной перестановки">tableCipher_error</a></td><td>Если текст пустой или недостаточной длины </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a5907eb876d5eecee30f6e9d637c632ae" name="a5907eb876d5eecee30f6e9d637c632ae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5907eb876d5eecee30f6e9d637c632ae">&#9670;&nbsp;</a></span>encrypt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::wstring tableCipher::encrypt </td>
+          <td>(</td>
+          <td class="paramtype">const std::wstring &amp;&#160;</td>
+          <td class="paramname"><em>open_text</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Метод зашифровывания </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">open_text</td><td>Открытый текст для шифрования </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Зашифрованная строка </dd></dl>
+<dl class="exception"><dt>Исключения</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classtableCipher__error.html" title="Класс-исключение для ошибок шифра табличной перестановки">tableCipher_error</a></td><td>Если текст пустой или недостаточной длины </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="afbba9bd8379e487cff5c4ff8857a2152" name="afbba9bd8379e487cff5c4ff8857a2152"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afbba9bd8379e487cff5c4ff8857a2152">&#9670;&nbsp;</a></span>isValidRussianText()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool tableCipher::isValidRussianText </td>
+          <td>(</td>
+          <td class="paramtype">const std::wstring &amp;&#160;</td>
+          <td class="paramname"><em>text</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Проверка текста на соответствие русскому алфавиту </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">text</td><td>Проверяемый текст </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>true если текст содержит только русские буквы и пробелы, иначе false </dd></dl>
+
+</div>
+</div>
+<a id="aeaf4e00ecfa05b262ab27de5219b1fad" name="aeaf4e00ecfa05b262ab27de5219b1fad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeaf4e00ecfa05b262ab27de5219b1fad">&#9670;&nbsp;</a></span>prepareText()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::wstring tableCipher::prepareText </td>
+          <td>(</td>
+          <td class="paramtype">const std::wstring &amp;&#160;</td>
+          <td class="paramname"><em>s</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Подготовка текста к шифрованию </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">s</td><td>Исходный текст </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Текст в верхнем регистре без пробелов </dd></dl>
+<dl class="exception"><dt>Исключения</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classtableCipher__error.html" title="Класс-исключение для ошибок шифра табличной перестановки">tableCipher_error</a></td><td>Если текст пустой, содержит недопустимые символы или только пробелы </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a380065e4a20a9e058dcfc211578445aa" name="a380065e4a20a9e058dcfc211578445aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a380065e4a20a9e058dcfc211578445aa">&#9670;&nbsp;</a></span>toUpper()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::wstring tableCipher::toUpper </td>
+          <td>(</td>
+          <td class="paramtype">const std::wstring &amp;&#160;</td>
+          <td class="paramname"><em>s</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Приведение строки к верхнему регистру </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">s</td><td>Входная строка </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Строка в верхнем регистре </dd></dl>
+
+</div>
+</div>
+<a id="a94d4dc8e8f098f7b91b4ba6d0eb549b5" name="a94d4dc8e8f098f7b91b4ba6d0eb549b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a94d4dc8e8f098f7b91b4ba6d0eb549b5">&#9670;&nbsp;</a></span>validateKey()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void tableCipher::validateKey </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>k</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Валидация ключа </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">k</td><td>Проверяемый ключ </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Исключения</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classtableCipher__error.html" title="Класс-исключение для ошибок шифра табличной перестановки">tableCipher_error</a></td><td>Если ключ невалиден </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a94f6cbdae434eb4210c5e065cb97771b" name="a94f6cbdae434eb4210c5e065cb97771b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a94f6cbdae434eb4210c5e065cb97771b">&#9670;&nbsp;</a></span>validateTextLength()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void tableCipher::validateTextLength </td>
+          <td>(</td>
+          <td class="paramtype">const std::wstring &amp;&#160;</td>
+          <td class="paramname"><em>text</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>operation</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Валидация длины текста относительно ключа </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">text</td><td>Проверяемый текст </td></tr>
+    <tr><td class="paramname">operation</td><td>Название операции (для сообщения об ошибке) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Исключения</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classtableCipher__error.html" title="Класс-исключение для ошибок шифра табличной перестановки">tableCipher_error</a></td><td>Если длина текста недостаточна для операции </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<hr/>Объявления и описания членов классов находятся в файлах:<ul>
+<li><a class="el" href="tableCipher_8h_source.html">tableCipher.h</a></li>
+<li><a class="el" href="tableCipher_8cpp.html">tableCipher.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Создано системой&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4
+</small></address>
+</body>
+</html>
